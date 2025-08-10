@@ -4,6 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :items
+  has_many :orders
+
   validates :nickname, presence: true
   VALID_NAME_REGEX = /\A[ぁ-んァ-ヶ一-龥々ー]+\z/
   validates :last_name, presence: true, format: { with: VALID_NAME_REGEX, message: "is invalid. Input full-width characters" }
