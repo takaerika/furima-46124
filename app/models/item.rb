@@ -9,7 +9,6 @@ class Item < ApplicationRecord
   belongs_to :shipping_fee
   belongs_to :shipping_day
 
-
   validates :image, presence: true
   validates :name, presence: true, length: { maximum: 40 }
   validates :description, presence: true, length: { maximum: 1000 }
