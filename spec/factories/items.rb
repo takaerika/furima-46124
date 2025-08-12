@@ -3,9 +3,9 @@ FactoryBot.define do
     name              { Faker::Commerce.product_name }
     description       { Faker::Lorem.sentence }
     category_id       { Faker::Number.between(from: 1, to: 10) }
-    condition_id      { Faker::Number.between(from: 1, to: 7) }
-    shipping_fee_id   { Faker::Number.between(from: 1, to: 3) }
-    prefecture_id     { Faker::Number.between(from: 1, to: 48) }
+    condition_id      { Faker::Number.between(from: 1, to: 6) }
+    shipping_fee_id   { Faker::Number.between(from: 1, to: 2) }
+    prefecture_id     { Faker::Number.between(from: 1, to: 47) }
     shipping_day_id { Faker::Number.between(from: 1, to: 3) }
     price { Faker::Number.between(from: 300, to: 9_999_999) }
 
