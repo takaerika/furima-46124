@@ -31,12 +31,15 @@
     </div>
     <%# /支払額の表示 %>
 
-    <%= form_with model: @order_address, url: item_orders_path, id: 'charge-form', class: 'transaction-form-wrap',local: true do |f| %>
+    <%= form_with model: @order_address, url: item_orders_path(@item), id: 'charge-form', class: 'transaction-form-wrap',local: true, data: { turbo: false } do |f| %>
+    <%= render partial:'shared/error_messages', model: @order_address, locals: { object: @order_address } %>
+
     <%# カード情報の入力 %>
     <div class='credit-card-form'>
       <h1 class='info-input-haedline'>
         クレジットカード情報入力
       </h1>
+       <%= f.hidden_field :token, id: 'card-token' %>
       <div class="form-group">
         <div class='form-text-wrap'>
           <label class="form-text">カード情報</label>
