@@ -430,7 +430,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   mini_magick
-  mysql2 (= 0.5.5)
+  mysql2 (~> 0.5)
   payjp
   pg (~> 1.1)
   pry-rails
