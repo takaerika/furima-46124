@@ -32,3 +32,7 @@ namespace :deploy do
     invoke 'unicorn:restart'
   end
 end
+
+set :default_env, {
+  "BUNDLE_BUILD__MYSQL2" => "--with-mysql-config=/usr/bin/mysql_config --with-opt-dir=/usr/include/openssl11"
+}
