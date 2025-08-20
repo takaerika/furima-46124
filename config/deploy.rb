@@ -33,6 +33,6 @@ namespace :deploy do
   end
 end
 
-set :default_env, {
+set :default_env, fetch(:default_env, {}).merge({
   "BUNDLE_BUILD__MYSQL2" => "--with-mysql-config=/usr/bin/mysql_config --with-opt-dir=/usr/include/openssl11"
-}
+})
